@@ -8,7 +8,7 @@ pm_switch:
     mov eax, 0x1
     mov cr0, eax
 
-    jmp CODE_SEG:init_pm
+    jmp CODE_SEG:pm_init
 
 
 [bits 32]

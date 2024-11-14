@@ -1,7 +1,7 @@
 gdt_start:
 
 gdt_null: ; make the first gdt entry which must be null
-    d 0x00 ; define 4 null bytes
+    dd 0x00 ; define 4 null bytes
     dd 0x00 ; define 4 null bytes
 
 gdt_code:

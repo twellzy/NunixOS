@@ -1,4 +1,5 @@
 [bits 32]
+
 VIDEO_MEM equ 0xb8000
 WHITE_ON_BLACK equ 0x0f
 
@@ -7,16 +8,16 @@ print_string_pm:
     mov edx, VIDEO_MEM
 
     print_string_pm_while:
-        mov al, [edx]
+        mov al, [ebx]
         mov ah, WHITE_ON_BLACK
 
-        cmp al, 0x00
+        cmp al, 0
         jz print_string_pm_return
 
-        mov [edx], ax
+        mov byte [edx], ax
 
         inc ebx
-        add edx, 0x2
+        add edx, 2
 
         jmp print_string_pm_while
 
